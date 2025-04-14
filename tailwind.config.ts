@@ -3,8 +3,6 @@ import type { Config } from "tailwindcss";
 const svgToDataUri = require("mini-svg-data-uri");
 const colors = require("tailwindcss/colors");
 
-
-
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
@@ -44,38 +42,73 @@ function addSvgPatterns({ matchUtilities, theme }: any) {
   );
 }
 
-
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        primary: "#050816",
-        secondary: "#aaa6c3",
-        tertiary: "#151030",
-        "black-100": "#100d25",
-        "black-200": "#090325",
-        "white-100": "#f3f3f3",
+        // Brand colors from the brochure
+        primary: {
+          50: '#e6f0f9',
+          100: '#cce0f3',
+          200: '#99c2e6',
+          300: '#66a3da',
+          400: '#3385cd',
+          500: '#2563eb', // Main blue from brochure
+          600: '#1d4ed8',
+          700: '#1e40af',
+          800: '#1e3a8a',
+          900: '#172554',
+        },
+        secondary: {
+          50: '#fff7ed',
+          100: '#ffedd5',
+          200: '#fed7aa',
+          300: '#fdba74',
+          400: '#fb923c',
+          500: '#f97316', // Main orange from brochure
+          600: '#ea580c',
+          700: '#c2410c',
+          800: '#9a3412',
+          900: '#7c2d12',
+        },
+        // Additional neutral colors
+        gray: {
+          50: '#f9fafb',
+          100: '#f3f4f6',
+          200: '#e5e7eb',
+          300: '#d1d5db',
+          400: '#9ca3af',
+          500: '#6b7280',
+          600: '#4b5563',
+          700: '#374151',
+          800: '#1f2937',
+          900: '#111827',
+        },
       },
       boxShadow: {
-        card: "0px 35px 120px -15px #211e35",
+        card: "0px 10px 25px -5px rgba(0, 0, 0, 0.1)",
+        highlight: "0px 0px 15px rgba(37, 99, 235, 0.3)",
       },
       screens: {
         xs: "450px",
       },
       animation:{
         spotlight: "spotlight 2s ease .75s 1 forwards",
-        scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite"
+        scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+        fadeIn: "fadeIn 0.5s ease-in-out",
+        slideUp: "slideUp 0.5s ease-in-out",
+        slideDown: "slideDown 0.5s ease-in-out",
+        slideLeft: "slideLeft 0.5s ease-in-out",
+        slideRight: "slideRight 0.5s ease-in-out",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       keyframes:{
         spotlight: {
@@ -86,6 +119,26 @@ const config: Config = {
           to: {
             transform: "translate(calc(-50% - 0.5rem))",
           },
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        slideDown: {
+          '0%': { transform: 'translateY(-20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        slideLeft: {
+          '0%': { transform: 'translateX(20px)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        slideRight: {
+          '0%': { transform: 'translateX(-20px)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
         },
       }
     },

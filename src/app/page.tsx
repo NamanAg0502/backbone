@@ -1,19 +1,34 @@
-import Image from "next/image";
-import HeroSection from "./components/HeroSection";
-import FeaturedCourses from "./components/FeaturedCourses";
-import Footer from "./components/Footer";
-import Testimonials from "./components/Testimonials"
-import Partners from "./components/Partners";
+import { Metadata } from "next";
+import {
+  HeroSection,
+  AboutSection,
+  // TeamSection,
+  FeaturesSection,
+  CoverageAreas,
+  ProcessSection,
+  CtaSection,
+} from "@/components/sections";
+import { metaData } from "@/data/website";
+import { Container } from "@/components/ui/container";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: metaData.title.default,
+  description: metaData.description,
+  keywords: metaData.keywords,
+};
+
+export default function HomePage() {
   return (
-    <main className="min-h-screen bg-black/[0.96] antialiased bg-grid-white/[0.02]">
-    <HeroSection/>
-    
-    <FeaturedCourses/>
-    <Testimonials/>
-    {/* <Partners /> */}
-    <Footer/>
-  </main>
+    <>
+      <HeroSection />
+      <Container>
+        <AboutSection />
+        <FeaturesSection />
+        <CoverageAreas />
+        {/* <TeamSection /> */}
+        <ProcessSection />
+        <CtaSection />
+      </Container>
+    </>
   );
 }

@@ -1,34 +1,29 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-// import Navbar from "./components/Navbar";
-import Navbar2 from "./components/Navbar2";
-const inter = Inter({ subsets: ["latin"] });
-
+import type { Metadata } from 'next';
+import './globals.css';
+import { MainLayout } from '@/components/layout';
+import { metaData } from '@/data/website';
 
 export const metadata: Metadata = {
-  title: "PointerZone",
-  description: "Trust of students",
+  title: metaData.title,
+  description: metaData.description,
+  keywords: metaData.keywords,
+  authors: metaData.authors,
+  creator: metaData.creator,
+  themeColor: metaData.themeColor,
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <>
-      <html lang="en" className="dark">
-        <body className={inter.className}>
-          {/* <div className="relative w-full flex items-center justify-center ">
-          <Navbar/>
-        </div> */}
-          <Navbar2 />
-
+    <html lang="en" className="scroll-smooth">
+      <body className="min-h-screen bg-white text-gray-900 antialiased">
+        <MainLayout>
           {children}
-        </body>
-      </html>
-     
-    </>
+        </MainLayout>
+      </body>
+    </html>
   );
 }
