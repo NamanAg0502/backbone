@@ -2,9 +2,9 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import RazorpayForm from "./RazorpayForm";
 import { CourseData } from "@/data/courses/courses-data";
 import { Container } from "@/components/ui/container";
+import RazorpayForm from "../payment";
 
 interface CourseTemplateProps {
   course: CourseData;

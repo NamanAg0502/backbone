@@ -10,7 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import RazorpayForm from "@/app/components/RazorpayForm";
+import { RazorpayForm } from "@/components/payment";
 import { DynamicIcon, IconType } from "@/components/ui/dynamic-icon";
 import { Badge } from "@/components/ui/badge";
 import { Container } from "@/components/ui/container";

@@ -1,8 +1,9 @@
 "use client";
+
 import React from "react";
 import { notFound } from "next/navigation";
-import CourseTemplate from "@/app/components/CourseTemplate";
 import { coursesData } from "@/data/courses/courses-data";
+import CourseTemplate from "@/components/course/course-template";
 
 export default function CoursePage({
   params: paramsPromise,
