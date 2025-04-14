@@ -10,10 +10,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { RazorpayForm } from "@/components/payment";
 import { DynamicIcon, IconType } from "@/components/ui/dynamic-icon";
 import { Badge } from "@/components/ui/badge";
 import { Container } from "@/components/ui/container";
+import RazorpayForm from "@/components/payment";
 
 const features = [
   {
@@ -91,7 +91,7 @@ export default function RegisterPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-secondary-50/50 opacity-70" />
         <div className="absolute inset-0 bg-grid-small bg-primary-100/40" />
       </div>
-      
+
       {/* Blur blobs */}
       <div className="absolute top-1/3 right-0 -mr-40 w-80 h-80 bg-secondary-200/30 rounded-full blur-3xl" />
       <div className="absolute bottom-1/3 left-0 -ml-40 w-80 h-80 bg-primary-200/30 rounded-full blur-3xl" />
@@ -107,9 +107,9 @@ export default function RegisterPage() {
               variant="outline"
               className="mb-4 py-1 px-4 text-sm bg-gradient-to-r from-primary-100 to-secondary-100 border-0 w-fit mx-auto shadow-sm"
             >
-              <span className="bg-gradient-to-r from-primary-600 to-secondary-500 bg-clip-text text-transparent font-medium">Limited Time Offer</span>
+              <span className="font-medium">Limited Time Offer</span>
             </Badge>
-            <CardTitle className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-primary-600 to-secondary-500 bg-clip-text text-transparent">
+            <CardTitle className="text-4xl sm:text-5xl font-bold">
               JEE Counseling Program
             </CardTitle>
             <CardDescription className="max-w-2xl mx-auto text-lg">
@@ -165,13 +165,13 @@ export default function RegisterPage() {
                 Success Stories
               </h3>
 
-              <div className="relative bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
+              <div className="relative backdrop-blur-sm p-6 rounded-xl shadow-sm border border-border hover:shadow-md transition-all duration-300">
                 <div className="absolute top-0 right-0 -mt-3 -mr-3">
-                  <Badge className="bg-gradient-to-r from-primary-600 to-secondary-500 text-white text-xs shadow-md">
+                  <Badge className="bg-secondary text-xs shadow-md">
                     {testimonials[activeTestimonial].rank}
                   </Badge>
                 </div>
-                <motion.p 
+                <motion.p
                   key={activeTestimonial}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -189,7 +189,7 @@ export default function RegisterPage() {
                     exit={{ opacity: 0, x: 10 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <p className="font-medium bg-gradient-to-r from-primary-600 to-secondary-500 bg-clip-text text-transparent">
+                    <p className="font-medium bg-secondary bg-clip-text text-transparent">
                       {testimonials[activeTestimonial].name}
                     </p>
                     <p className="text-sm text-gray-500">
@@ -223,7 +223,7 @@ export default function RegisterPage() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <Card className="sticky top-24 shadow-lg border-primary/10 overflow-hidden backdrop-blur-sm bg-white/80">
-              <div className="absolute top-0 right-0 left-0 h-2 bg-gradient-to-r from-primary-600 to-secondary-500" />
+              <div className="absolute top-0 right-0 left-0 h-2 bg-secondary" />
               <CardHeader className="pb-4">
                 <CardTitle className="text-xl text-center">
                   Register Now
@@ -235,26 +235,26 @@ export default function RegisterPage() {
               <CardContent>
                 <div className="space-y-4 mb-6">
                   <div className="flex items-center gap-2 text-sm">
-                    <div className="flex-shrink-0 h-5 w-5 rounded-full bg-gradient-to-r from-primary-600 to-secondary-500 flex items-center justify-center">
-                      <DynamicIcon name="Check" size={12} className="text-white" />
+                    <div className="flex-shrink-0 h-5 w-5 rounded-full bg-secondary flex items-center justify-center">
+                      <DynamicIcon name="Checkbox" size={12} />
                     </div>
                     <span>One-on-one counseling sessions</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <div className="flex-shrink-0 h-5 w-5 rounded-full bg-gradient-to-r from-primary-600 to-secondary-500 flex items-center justify-center">
-                      <DynamicIcon name="Check" size={12} className="text-white" />
+                    <div className="flex-shrink-0 h-5 w-5 rounded-full bg-secondary flex items-center justify-center">
+                      <DynamicIcon name="Checkbox" size={12} />
                     </div>
                     <span>Personalized study plan</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <div className="flex-shrink-0 h-5 w-5 rounded-full bg-gradient-to-r from-primary-600 to-secondary-500 flex items-center justify-center">
-                      <DynamicIcon name="Check" size={12} className="text-white" />
+                    <div className="flex-shrink-0 h-5 w-5 rounded-full bg-secondary flex items-center justify-center">
+                      <DynamicIcon name="Checkbox" size={12} />
                     </div>
                     <span>Mock test analysis</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <div className="flex-shrink-0 h-5 w-5 rounded-full bg-gradient-to-r from-primary-600 to-secondary-500 flex items-center justify-center">
-                      <DynamicIcon name="Check" size={12} className="text-white" />
+                    <div className="flex-shrink-0 h-5 w-5 rounded-full bg-secondary flex items-center justify-center">
+                      <DynamicIcon name="Checkbox" size={12} />
                     </div>
                     <span>College selection guidance</span>
                   </div>
@@ -267,9 +267,7 @@ export default function RegisterPage() {
                       <span className="text-sm line-through text-gray-500">
                         ₹9,999
                       </span>
-                      <span className="text-lg font-bold bg-gradient-to-r from-primary-600 to-secondary-500 bg-clip-text text-transparent ml-2">
-                        ₹7,999
-                      </span>
+                      <span className="text-lg font-bold ml-2">₹7,999</span>
                     </div>
                   </div>
                   <div className="text-xs text-gray-500 mt-1">
